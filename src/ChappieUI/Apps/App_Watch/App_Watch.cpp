@@ -4,7 +4,7 @@
 #include "UI/ui.h"
 
 
-static std::string app_name = "Watch";
+static std::string app_name = "表盘";
 static CHAPPIE* device;
 
 

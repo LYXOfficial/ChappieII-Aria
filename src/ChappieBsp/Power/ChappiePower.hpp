@@ -11,8 +11,8 @@
 #pragma once
 #include <Arduino.h>
 #include "AXP173/AXP173.h"
-#define AXPManage 1             
-#define IP5Manage 0
+#define AXPManage 0            
+#define IP5Manage 1
 #define CHAPPIE_PWR_CTRL    GPIO_NUM_9
 #define CHAPPIE_BATM_ADC    GPIO_NUM_8
 #define CHAPPIE_BATM_EN     GPIO_NUM_18
@@ -105,7 +105,7 @@ class ChappiePower {
                 return ((float)pmu.getBatLevel());
             #endif
             #if IP5Manage
-                return ((float)readBatMilliVoltRaw() * 3 / 2000);
+                return (readBatPercentage());
             #endif
         }
     #if AXPManage
@@ -180,13 +180,16 @@ class ChappiePower {
             gpio_set_level(CHAPPIE_BATM_EN, 1);
             gpio_reset_pin(CHAPPIE_BATM_EN);
             gpio_reset_pin(CHAPPIE_BATM_ADC);
+            char btr[4];
+            sprintf(btr, "%d", ret);
+            Serial.println(btr);
             return ret;
         }
 
         inline uint8_t readBatPercentage()
         {
             /* Asume 0~100% to be 3.2~4.2V */
-            uint8_t ret = map((readBatMilliVoltRaw() * 3 / 2), 3200, 4100, 0, 100);
+            uint8_t ret = map((readBatMilliVoltRaw() * 3 / 2), 3200, 4200, 0, 100)/5*5;
             return ret;
         }
 

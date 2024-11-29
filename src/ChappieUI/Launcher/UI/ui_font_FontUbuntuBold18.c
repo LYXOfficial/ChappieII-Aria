@@ -2215,6 +2215,7 @@ lv_font_t ui_font_FontUbuntuBold18 = {
 #if LV_VERSION_CHECK(7, 4, 0) || LVGL_VERSION_MAJOR >= 8
     .underline_position = -2,
     .underline_thickness = 2,
+    .fallback = &lv_font_montserrat_18,
 #endif
     .dsc = &font_dsc           /*The custom font data. Will be accessed by `get_glyph_bitmap/dsc` */
 };

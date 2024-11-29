@@ -13,7 +13,7 @@
 #include "UI/ui.h"
 ConfigWiFi Wf;
 
-static const char * week[7]={"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+static const char * week[7]={"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
 /* Structure to hold App num and status */
 struct AppManager_t {
     uint16_t totalNum = 0;
@@ -98,7 +98,7 @@ namespace App {
             lv_obj_align(app_name, LV_ALIGN_CENTER, i * 180 + 560, 95);
             lv_label_set_text(app_name, App::Register[i].appName().c_str());
             lv_obj_set_style_text_color(app_name, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_text_font(app_name, &ui_font_FontUbuntuBold18, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_text_font(app_name, &ui_font_FontHarmonySans18, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
 
         /* Add ui event call back */
@@ -272,13 +272,13 @@ namespace App {
     void App_Launcher::time_update(lv_timer_t * timer)
     {
         CHAPPIE* device = (CHAPPIE*)timer->user_data;
-        static char label_buffer[10];
+        static char label_buffer[20];
         /* Update clock */
         static I2C_BM8563_DateTypeDef dateStruct;
         static I2C_BM8563_TimeTypeDef rtc_time;
         device->Rtc.getDate(&dateStruct);
         
-        snprintf(label_buffer, 10, "%s,%02d-%02d",week[dateStruct.weekDay], dateStruct.month, dateStruct.date);
+        snprintf(label_buffer, 20, "%s, %02d-%02d",week[dateStruct.weekDay], dateStruct.month, dateStruct.date);
         lv_label_set_text(ui_LabelStateBarTime1, label_buffer);
         // snprintf(label_buffer, 10, "%d:%02d:%02d", rtc_time.hours, rtc_time.minutes, rtc_time.seconds);
         device->Rtc.getTime(&rtc_time);
@@ -296,11 +296,12 @@ namespace App {
         if (device->Wf.isConnected() ){
             // show wifi icon
             lv_obj_clear_flag(ui_WifiBar, LV_OBJ_FLAG_HIDDEN);
-            
+            _device_status.OnWiFi= true;
         }
         else{
             // hide wifi icon
             lv_obj_add_flag(ui_WifiBar, LV_OBJ_FLAG_HIDDEN); // hide flag
+            _device_status.OnWiFi= false;
         }
         #if AXPManage
             if (device->Pow.isCharing()){

@@ -1,9 +1,10 @@
 #if 1
 #include "App_Noiser.h"
 #include "../../../ChappieBsp/Chappie.h"
+#include "../../Launcher/UI/ui.h"
 
 static CHAPPIE * device;
-static std::string app_name = "Noiser";
+static std::string app_name = "噪声";
 
 
 LV_IMG_DECLARE(ui_img_icon_ear_png);
@@ -88,12 +89,12 @@ void NoiserPage(void)
     create_mic_bars(UI_Noiser);
 
     lv_obj_t * title = lv_label_create(UI_Noiser);
-    vltext(title,LV_ALIGN_TOP_LEFT,15,10,"Noiser");
-    lv_obj_set_style_text_font(title,&lv_font_montserrat_24,0);
+    vltext(title,LV_ALIGN_TOP_LEFT,15,10,"噪声监测仪");
+    lv_obj_set_style_text_font(title,&ui_font_FontHarmonySans18,0);
 
     timelabel = lv_label_create(UI_Noiser);
     vltext(timelabel,LV_ALIGN_TOP_RIGHT,-10,10,"10:00");
-    lv_obj_set_style_text_font(timelabel,&lv_font_montserrat_24,0);
+    lv_obj_set_style_text_font(timelabel,&ui_font_FontHarmonySans18,0);
 
     decibel = lv_label_create(UI_Noiser);
     lv_obj_set_style_text_font(decibel,ResourcePool::GetFont("bahnschrift_65"),0);
@@ -102,7 +103,7 @@ void NoiserPage(void)
 
     lv_obj_t * dBlabel = lv_label_create(UI_Noiser);
     vltext(dBlabel,LV_ALIGN_CENTER,-3,-40,"dB");
-    lv_obj_set_style_text_font(dBlabel,&lv_font_montserrat_24,0);
+    lv_obj_set_style_text_font(dBlabel,&ui_font_FontHarmonySans18,0);
 
 
     contentbox = lv_obj_create(UI_Noiser);
@@ -112,15 +113,15 @@ void NoiserPage(void)
     lv_obj_set_style_bg_color(contentbox, lv_color_hex(0x53DE77), LV_PART_MAIN | LV_STATE_DEFAULT);
     
     accept = lv_label_create(contentbox);
-    vltext(accept,LV_ALIGN_CENTER,15,0,"Acceptable",lv_color_hex(0x000000));
-    lv_obj_set_style_text_font(accept,&lv_font_montserrat_24,0);
+    vltext(accept,LV_ALIGN_CENTER,15,0,"正常",lv_color_hex(0x000000));
+    lv_obj_set_style_text_font(accept,&ui_font_FontHarmonySans18,0);
     acceptIcon = lv_img_create(contentbox);
     lv_obj_align(acceptIcon,LV_ALIGN_CENTER,-80,0);
     lv_img_set_src(acceptIcon, ResourcePool::GetImage("ok_dark"));
 
     warming = lv_label_create(contentbox);
-    vltext(warming,LV_ALIGN_CENTER,15,0,"Wariming",lv_color_hex(0x000000));
-    lv_obj_set_style_text_font(warming,&lv_font_montserrat_24,0);
+    vltext(warming,LV_ALIGN_CENTER,15,0,"可能会损伤听力",lv_color_hex(0x000000));
+    lv_obj_set_style_text_font(warming,&ui_font_FontHarmonySans18,0);
     warmingIcon = lv_img_create(contentbox);
     lv_obj_align(warmingIcon,LV_ALIGN_CENTER,-80,0);
     lv_img_set_src(warmingIcon, ResourcePool::GetImage("warming_dark"));

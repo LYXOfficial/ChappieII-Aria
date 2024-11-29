@@ -12,7 +12,7 @@
 #if 1
 
 /* Common configs */
-#define EMMA_BSP_VERISON                "v3.2"
+#define EMMA_BSP_VERISON                "v4.0"
 #define EMMA_PROJECT_NAME               "Chappie-II"
 
 

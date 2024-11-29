@@ -94,8 +94,8 @@ Contributors:
 #endif
 
 #if defined ( ARDUINO )
- #include <SPI.h>
- #include <Wire.h>
+ #include "SPI.h"
+ #include "Wire.h"
 #endif
 
 namespace lgfx

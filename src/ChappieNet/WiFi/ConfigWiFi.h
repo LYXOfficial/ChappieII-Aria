@@ -1,10 +1,10 @@
 #ifndef CONFIGWIFI_H
 #define CONFIGWIFI_H
 #include <WiFi.h> // 引入 WiFi 库
-#include "ChappieBsp\Utility\BM8563\I2C_BM8563.h"
+#include "ChappieBsp/Utility/BM8563/I2C_BM8563.h"
 #include <DNSServer.h>
 #include <WebServer.h>
-#include "HttpClient.h"
+#include "ChappieBsp/Utility/HTTPClient.h"
 #include <ESPmDNS.h>     //用于设备域名 MDNS.begin("esp32")
 #include <Preferences.h> //用于参数数据的
 

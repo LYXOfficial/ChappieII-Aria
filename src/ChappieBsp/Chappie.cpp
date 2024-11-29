@@ -63,7 +63,6 @@ void CHAPPIE::init()
     Wire.setClock(400000);
     // delay(3000);
     /* Init power contrl */
-    delay(30);
     Pow.init();
     
     // delay(3000);
@@ -74,39 +73,36 @@ void CHAPPIE::init()
     Lcd.init();
     Lcd.setFont(&fonts::efontCN_12);
 
-    /* Print Logo in a cool way */
     Lcd.setCursor(0, 0);
-    for (char c : Yeely) {
-        Lcd.printf("%c", c);
-        delay(1);
-    }
     // Lcd.printf("%s", Logo);
     // delay(50);
-    Lcd.printf("\n ChappieBSP %s :)\n Author: Forairaaaaa\n", EMMA_BSP_VERISON);
+    Lcd.printf("\n ChappieBSP %s :)\n Author: Forairaaaaa && Ariasaka\n", EMMA_BSP_VERISON);
     // delay(50);
     Lcd.printf(" Project: %s\n", EMMA_PROJECT_NAME);
     // Lcd.printf(" IIC Num: %d\n", num);
     // delay(50);
     Tp.init(&Wire);
-
-    /* Init touchpad */
-    Lcd.printf("%s", Cowsay("Pls touch screen to wakeup Tp").c_str());
     
-    Lcd.printf("Tp init success!\n");
+    Lcd.printf("Touch init success!\n");
     Wf.Init();
+    Lcd.printf("Wifi init success!\n");
     /* Init RTC */
     Rtc.begin();
+    Lcd.printf("RTC init success!\n");
     /* Init IMU */
     Imu.init();
+    Lcd.printf("IMU init success!\n");
     /* Init SD card */
     Sd.init();
+    Lcd.printf("SD init success!\n");
     
     /* Init BMP280 */
     Env.init();
+    Lcd.printf("BMP init success!\n");
     
     
     /* Fire up */
-    Speaker.setVolume(50);
+    Speaker.setVolume(20);
     Speaker.tone(9000, 300);
     Vibrator.Buzzzzz(300);
     

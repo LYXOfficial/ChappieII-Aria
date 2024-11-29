@@ -3,9 +3,7 @@
  * Bpp: 8
  * Opts: --bpp 8 --size 18 --font C:\Users\Forairaaaaa\Desktop\Launcher\assets\Ubuntu-Bold.ttf -o C:\Users\Forairaaaaa\Desktop\Launcher\assets\font_UbuntuBold18.c --format lvgl -r 0x20-0x7f --no-compress --no-prefilter
  ******************************************************************************/
-
 #include "lvgl.h"
-
 #ifndef FONT_UBUNTUBOLD18
 #define FONT_UBUNTUBOLD18 1
 #endif

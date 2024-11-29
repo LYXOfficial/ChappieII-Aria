@@ -1,4 +1,4 @@
-#include "configwifi.h"
+#include "ConfigWiFi.h"
 
 Preferences prefs;
 DNSServer dnsServer;  // 创建dnsServer实例

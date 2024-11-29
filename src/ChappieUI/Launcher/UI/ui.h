@@ -47,6 +47,7 @@ LV_IMG_DECLARE(ui_img_img_Charing_png);    // assets\IMG_Icon_Defalut.png
 
 LV_FONT_DECLARE(ui_font_FontUbuntuBold16);
 LV_FONT_DECLARE(ui_font_FontUbuntuBold18);
+LV_FONT_DECLARE(ui_font_FontHarmonySans18);
 LV_FONT_DECLARE(ui_font_FontUbuntuBold96);
 
 

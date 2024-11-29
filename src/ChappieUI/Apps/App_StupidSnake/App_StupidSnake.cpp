@@ -14,7 +14,7 @@
 #include "StupidSnake.h"
 
 
-static std::string app_name = "StupidSnake";
+static std::string app_name = "贪吃蛇";
 static CHAPPIE* device;
 
 LV_IMG_DECLARE(ui_img_icon_snakegame_png);
@@ -54,16 +54,6 @@ namespace App {
         UI_LOG("[%s] onCreate\n", App_StupidSnake_appName().c_str());
 
         Game_Setup(device);
-        while (1) {
-            Game_Loop();
-            if (device->Button.B.pressed()) {
-                Game_End();
-                break;
-            }
-        }
-        lv_obj_t * label = lv_label_create(lv_scr_act());
-        lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
-        lv_label_set_text(label, "Press B again to quit");
     }
 
 
@@ -75,6 +65,7 @@ namespace App {
      */
     void App_StupidSnake_onLoop()
     {
+        Game_Loop();
     }
 
 
@@ -85,6 +76,7 @@ namespace App {
      */
     void App_StupidSnake_onDestroy()
     {
+        Game_End();
         UI_LOG("[%s] onDestroy\n", App_StupidSnake_appName().c_str());
     }
 

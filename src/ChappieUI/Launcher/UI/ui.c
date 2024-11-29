@@ -133,13 +133,13 @@ void ui_ScreenLauncher_screen_init(void)
     lv_obj_set_x(ui_LabelBrightness, 0);
     lv_obj_set_y(ui_LabelBrightness, -88);
     lv_obj_set_align(ui_LabelBrightness, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_LabelBrightness, "BRIGHTNESS");
+    lv_label_set_text(ui_LabelBrightness, "亮度");
     lv_obj_set_style_text_color(ui_LabelBrightness, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_LabelBrightness, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(ui_LabelBrightness, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_line_space(ui_LabelBrightness, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui_LabelBrightness, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_LabelBrightness, &ui_font_FontUbuntuBold16, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_LabelBrightness, &ui_font_FontHarmonySans18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_ButtonAutoScreenOff = lv_btn_create(ui_ArcBrightness);
     lv_obj_set_width(ui_ButtonAutoScreenOff, 155);
@@ -161,12 +161,12 @@ void ui_ScreenLauncher_screen_init(void)
     lv_obj_set_width(ui_LabelBtnAutoScreenOff, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_LabelBtnAutoScreenOff, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_LabelBtnAutoScreenOff, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_LabelBtnAutoScreenOff, "AutoScreenOff");
+    lv_label_set_text(ui_LabelBtnAutoScreenOff, "自动熄屏");
     lv_obj_set_style_text_color(ui_LabelBtnAutoScreenOff, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_LabelBtnAutoScreenOff, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(ui_LabelBtnAutoScreenOff, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_line_space(ui_LabelBtnAutoScreenOff, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_LabelBtnAutoScreenOff, &ui_font_FontUbuntuBold16, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_LabelBtnAutoScreenOff, &ui_font_FontHarmonySans18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_ButtonInfos = lv_btn_create(ui_PanelControlPad);
     lv_obj_set_width(ui_ButtonInfos, 60);
@@ -257,7 +257,7 @@ void ui_ScreenLauncher_screen_init(void)
     lv_obj_set_style_text_opa(ui_LabelStateBarTime1, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(ui_LabelStateBarTime1, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_line_space(ui_LabelStateBarTime1, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_LabelStateBarTime1, &ui_font_FontUbuntuBold18, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_LabelStateBarTime1, &ui_font_FontHarmonySans18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_ImgStateBar = lv_img_create(ui_ScreenLauncher);
     lv_img_set_src(ui_ImgStateBar, &ui_img_img_statebar_png);

@@ -180,15 +180,6 @@ namespace App {
         UI_LOG("[%s] onCreate\n", App_FFT_appName().c_str());
 
         _fft_init();
-        while (1) {
-            _fft_update_data();
-            _fft_update_display();
-            if (device->Button.B.pressed()) 
-                break;
-        }
-        lv_obj_t * label = lv_label_create(lv_scr_act());
-        lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
-        lv_label_set_text(label, "Press B again to quit");
     }
 
 
@@ -200,6 +191,8 @@ namespace App {
      */
     void App_FFT_onLoop()
     {
+        _fft_update_data();
+        _fft_update_display();
     }
 
 
