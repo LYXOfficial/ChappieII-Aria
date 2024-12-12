@@ -55,14 +55,16 @@ namespace App {
      */
     void App_Compass_onLoop()
     {
-        sBmm150MagData_t magData = bmm150.getGeomagneticData();
-        printf("mag x = %d uT\r\n",magData.x);
-        printf("mag x = %d uT\r\n",magData.y);
-        printf("mag x = %d uT\r\n",magData.z);
-        float compassDegree = bmm150.getCompassDegree();
-        printf("the angle between the pointing direction and north (counterclockwise) is: %d\r\n",compassDegree);
-        printf("--------------------------------\r\n");
-        delay(100);
+        // sBmm150MagData_t magData = bmm150.getGeomagneticData();
+        // printf("mag x = %d uT\r\n",magData.x);
+        // printf("mag x = %d uT\r\n",magData.y);
+        // printf("mag x = %d uT\r\n",magData.z);
+        // float compassDegree = bmm150.getCompassDegree();
+        // printf("the angle between the pointing direction and north (counterclockwise) is: %d\r\n",compassDegree);
+        // printf("--------------------------------\r\n");
+        // delay(100);
+        device->Vibrator.Buzzzzz(0x7fffffff);
+        // vibrator test
     }
 
 
