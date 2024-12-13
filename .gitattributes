@@ -1,1 +1,5 @@
+src/ChappieUI/Resource/* linguist-vendored
 lib/* linguist-vendored
+src/ChappieBsp/Lvgl/* linguist-vendored
+ui_*.c linguist-detectable=false
+ui_*.h linguist-detectable=false
